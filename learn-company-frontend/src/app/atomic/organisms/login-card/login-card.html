@@ -1,0 +1,38 @@
+<div class="login-card">
+    <div class="icon-container">
+        <app-icon name="lock" [size]="40" color="#00cfff"></app-icon>
+    </div>
+
+    <h2 class="title">Iniciar Sesión</h2>
+    <p class="subtitle">Ingresa tus credenciales para continuar</p>
+
+    <app-form-field
+        label="Correo Electrónico"
+        id="emailInput"
+        [required]="true"
+        placeholder="tu@email.com"
+        [(value)]="email"
+    ></app-form-field>
+
+    <app-form-field
+        label="Contraseña"
+        id="passwordInput"
+        [required]="true"
+        placeholder="········"
+        type="password"
+        [(value)]="password"
+    ></app-form-field>
+
+    <app-button
+        label="Iniciar Sesión"
+        variant="primary"
+        size="large"
+        [fullWidth]="true"
+        (onClick)="onLoginClick()"
+    ></app-button>
+
+    <div class="forgot-password">
+        <span class="forgot-text">¿Olvidaste tu contraseña?</span>
+        <a href="#" class="recover-link" (click)="onForgotPasswordClick(); $event.preventDefault()">Recuperar</a>
+    </div>
+</div>

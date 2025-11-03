@@ -1,0 +1,4 @@
+<label [attr.for]="forId" [ngClass]="[ size, required ? 'required' : '' ]">
+  {{ label }}
+  <span *ngIf="required" class="required-star">*</span>
+</label>

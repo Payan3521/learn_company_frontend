@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  // Fondo muy oscuro (casi negro)
+  --color-bg: #0f1013;
+  // Fondo de la tarjeta (ligeramente más claro)
+  --color-card-bg: #1c1f26;
+  // Fondo del input
+  --color-input-bg: #111317;
+  // Borde del input
+  --color-input-border: #333a46;
+  // Color principal (Cyan/Turquesa)
+  --color-cyan: #00cfff;
+  // Versión más oscura para hover
+  --color-cyan-dark: #00b0e6;
+  // Color del texto principal (Blanco suave)
+  --color-text: #e0e6f0;
+  // Color del placeholder/texto secundario (Gris oscuro)
+  --color-text-dark: #7e879a;
+  // Color para el texto de botones primarios
+  --color-text-on-cyan: #00141a;
+}

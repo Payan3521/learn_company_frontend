@@ -1,0 +1,53 @@
+<div class="test-grid">
+    <app-button 
+        label="Login"
+        variant="primary"
+        size="large"
+        [fullWidth]="true"
+        (onClick)="handleButtonClick('Primary')"
+    ></app-button>
+
+    <app-input
+        id="nameInput"
+        [(value)]="inputValue"
+        placeholder="Escribe algo..."
+  ></app-input>
+
+    <app-label
+    label="Nombre"
+    forId="nameInput"
+    [required]="false"
+    size="large"
+  ></app-label>
+
+    <app-form-field
+    label="Correo Electrónico"
+    id="emailInput"
+    [required]="true"
+    [(value)]="email"
+    placeholder="Ingresa tu correo electrónico"
+  ></app-form-field>
+
+  <app-form-field
+    label="Contraseña"
+    id="passwordInput"
+    [required]="true"
+    [(value)]="password"
+    placeholder="Ingresa tu contraseña"
+    type="password"
+  ></app-form-field>
+
+  <p>Correo ingresado: {{ email }}</p>
+  <p>Contraseña ingresada: {{ password }}</p>
+
+    <h2>Login Card Preview</h2>
+  <app-login-card
+    [email]="email"
+    [password]="password"
+    (login)="handleLogin($event)"
+  ></app-login-card>
+
+    <app-login-page-template
+  (login)="handleLogin($event)"
+></app-login-page-template>
+</div>

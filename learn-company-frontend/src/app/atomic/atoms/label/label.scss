@@ -1,0 +1,29 @@
+label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+  text-shadow: 0 0 4px rgba(0, 207, 255, 0.4);
+
+  &.required {
+    font-weight: 700;
+  }
+}
+
+.required-star {
+  color: #00cfff;
+  margin-left: 4px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.large {
+  font-size: 18px;
+}

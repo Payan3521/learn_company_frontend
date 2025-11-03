@@ -1,0 +1,17 @@
+<div class="form-field">
+  <app-label
+    [label]="label"
+    [forId]="id"
+    [required]="required"
+    size="medium"
+  ></app-label>
+
+  <app-input
+    [id]="id"
+    [type]="type"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [value]="value"
+    (valueChange)="onValueChange($event)"
+  ></app-input>
+</div>
