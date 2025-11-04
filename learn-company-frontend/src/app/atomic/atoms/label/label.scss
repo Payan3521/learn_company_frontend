@@ -1,29 +1,52 @@
 label {
+
+  // define el comportamiento de visualización del elemento
   display: block;
+
+  // define el tamaño de la fuente
   font-size: 15px;
+
+  // define el peso de la fuente
   font-weight: 600;
+
+  // define el color del texto
   color: #ffffff;
+
+  // define el espaciado inferior
   margin-bottom: 4px;
+
+  // agrega un efecto de sombra al texto
   text-shadow: 0 0 4px rgba(0, 207, 255, 0.4);
 
+  // estilo para etiquetas requeridas
   &.required {
+
+    // hace que el texto sea más audaz
     font-weight: 700;
   }
 }
 
+// estilo para el asterisco de campo requerido
 .required-star {
+  // define el color del asterisco
   color: #00cfff;
+
+  // agrega un margen izquierdo al asterisco
   margin-left: 4px;
 }
 
+// estilos para diferentes tamaños de etiqueta
 .small {
+  // define el tamaño de la fuente para etiquetas pequeñas
   font-size: 12px;
 }
 
 .medium {
+  // define el tamaño de la fuente para etiquetas medianas
   font-size: 14px;
 }
 
 .large {
+  // define el tamaño de la fuente para etiquetas grandes
   font-size: 18px;
 }

@@ -13,5 +13,10 @@
     [disabled]="disabled"
     [value]="value"
     (valueChange)="onValueChange($event)"
+    [ngClass]="{ 'has-error': errorMessage }"
   ></app-input>
+
+  <span *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </span>
 </div>

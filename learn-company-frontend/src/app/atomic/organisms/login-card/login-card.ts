@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { LoginForm } from '../../../core/models/login-form.model';
 
 @Component({
   selector: 'app-login-card',
@@ -7,17 +8,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './login-card.scss',
 })
 export class LoginCard {
-  @Input() email : string = '';
-  @Input() password : string = '';
 
-  @Output() login = new EventEmitter<{ email: string; password: string }>();
+  @Output() login = new EventEmitter<LoginForm>();
   @Output() forgotPassword = new EventEmitter<void>();
 
-  onLoginClick() {
-    this.login.emit({
-      email: this.email,
-      password: this.password
-    });
+  // Se dispara desde (onClick) del botón
+  onLoginClick(data: LoginForm) {
+    this.login.emit(data);
   }
 
   onForgotPasswordClick() {

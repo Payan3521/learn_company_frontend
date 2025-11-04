@@ -1,20 +1,23 @@
 input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 10px;
-  background: var(--color-input-bg);
-  border: 1px solid var(--color-input-border);
-  font-size: 15px;
-  color: var(--color-text);
-  outline: none;
-  transition: border 0.25s, box-shadow 0.25s;
+  width: 100%; // Ocupa todo el ancho del contenedor
+  padding: 12px 14px; // Espaciado interno
+  border-radius: 10px; // Bordes redondeados
+  background: var(--color-input-bg); // Color de fondo
+  border: 1px solid var(--color-input-border); // Borde del input
+  font-size: 15px; // Tamaño de fuente
+  color: var(--color-text); // Color del texto
+  outline: none; // Sin contorno por defecto
+  transition: border 0.25s, box-shadow 0.25s; // Transición suave para borde y sombra
+  box-sizing: border-box;
 
+  // Estilos cuando se enfoca el input
   &:focus {
-    border-color: var(--color-cyan);
-    box-shadow: 0 0 6px rgba(0,207,255,0.4);
-  }
+    border-color: var(--color-cyan); // Cambia el color del borde al enfocar
+    box-shadow: 0 0 6px rgba(0,207,255,0.4); // Sombra alrededor del input
+  } 
 
+  //Estilos para el placeholder
   &::placeholder {
-    color: var(--color-text-dark);
+    color: var(--color-text-dark); // Color del texto del placeholder
   }
 }

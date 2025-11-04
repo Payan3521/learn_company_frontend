@@ -1,7 +1,32 @@
 .form-field {
+
+  // espacion entre campos del formulario
   margin-bottom: 16px;
+
+  // ocupa todo el ancho disponible
   width: 100%;
+
+  // estructura flexible
   display: flex;
+
+  // label -> input uno debajo del otro
   flex-direction: column;
+
+  // espacio entre label e input
   gap: 6px;
 }
+
+.error-message {
+  font-size: 12px;
+  color: #ff4d4d;
+  margin-top: 2px;
+  padding-left: 4px;
+  text-shadow: 0 0 4px rgba(255, 77, 77, 0.4);
+}
+
+/* Cuando el input tiene error */
+.has-error {
+  box-shadow: 0 0 6px rgba(255, 77, 77, 0.6);
+  border-color: #ff4d4d !important;
+}
+

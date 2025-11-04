@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { LoginForm } from '../../../core/models/login-form.model';
 
 @Component({
   selector: 'app-login-page-template',
@@ -7,13 +8,19 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrl: './login-page-template.scss',
 })
 export class LoginPageTemplate {
-  @Output() login = new EventEmitter<{ email: string; password: string }>();
+
+  // emitirá el email y password cuando se haga click en el botón de login
+  @Output() login = new EventEmitter<LoginForm>();
+
+  // emitirá un evento cuando se haga click en "¿Olvidaste tu contraseña?"
   @Output() forgotPassword = new EventEmitter<void>();
 
-  handleLogin(event: { email: string; password: string }) {
-    this.login.emit(event);
+  // manejar el evento de login desde el login-card
+  handleLogin(data: LoginForm) {
+    this.login.emit(data);
   }
 
+  // manejar el evento de olvidar contraseña desde el login-card
   handleForgotPassword() {
     this.forgotPassword.emit();
   }

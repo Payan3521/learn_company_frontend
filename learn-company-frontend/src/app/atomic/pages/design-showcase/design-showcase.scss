@@ -1,0 +1,33 @@
+/* estilos de demo para showcase */
+.demo-btn {
+  background: #222;
+  padding: 8px 12px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.test-hover {
+  transition: color 0.18s ease;
+}
+.test-hover:hover {
+  color: #00cfff;
+}
+
+/* lista de icons */
+.icon-list {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.icon-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: #ddd;
+}

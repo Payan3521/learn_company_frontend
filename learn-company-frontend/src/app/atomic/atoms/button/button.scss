@@ -1,64 +1,77 @@
 button {
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: auto;
+  padding: 10px 15px; //tamaño del boton vertical x horizontal
+  border-radius: 4px; //bordes redondeados
+  border: 1px solid transparent; //borde del boton con efecto transparente para evitar salto al hacer hover
+  cursor: pointer; //cambia el cursor "Mano" al pasar por encima
+  transition: background-color 0.3s; //transicion suave al cambiar el color de fondo
+  width: auto; //ancho automatico segun el contenido
 
+  //pseudo clase para el estado deshabilitado
   &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    opacity: 0.6; //reduce la opacidad para indicar que esta deshabilitado
+    cursor: not-allowed; //cambia el cursor a "No permitido"
   }
 }
 
+// Variantes de botones
 .primary {
-  background: var(--color-cyan);
-  border-radius: 8px;
-  font-weight: 600;
-  color: #00141a;
-  border: none;
-  transition: all .25s;
+  background: var(--color-cyan); //color de fondo principal
+  border-radius: 8px; //bordes mas redondeados
+  font-weight: 600; //texto en negrita
+  color: #00141a; //color del texto
+  border: none; //sin borde
+  transition: all .25s; //transicion suave para todos los cambios
 
+  // pseudo clase para el estado hover
   &:hover:not(:disabled) {
-    background: var(--color-cyan-dark);
-    box-shadow: 0 0 10px rgba(0,207,255,0.6);
+    background: var(--color-cyan-dark); //cambia el color de fondo al pasar el cursor
+    box-shadow: 0 0 10px rgba(0,207,255,0.6); //agrega una sombra al boton
   }
 }
 
+// Agrega estilos para secundario
 .secondary {
-  background-color: white;
-  color: blue;
-  border-color: blue;
+  background-color: white; // fondo blanco
+  color: blue; // texto azul
+  border-color: blue; // borde azul
+
+  // pseudo clase para el estado hover
   &:hover:not(:disabled) {
-    background-color: lightblue;
+    background-color: lightblue; // cambia el fondo a azul claro al pasar el cursor
   }
 }
 
+// Agrega estilos para peligro
 .danger {
-  background-color: red;
-  color: white;
+  background-color: red; // fondo rojo
+  color: white; // texto blanco
+
+  // pseudo clase para el estado hover
   &:hover:not(:disabled) {
-    background-color: darkred;
+    background-color: darkred; // cambia el fondo a rojo oscuro al pasar el cursor
   }
 }
 
+// Tamaño small 
 .small {
-  padding: 6px 10px;
-  font-size: 0.8rem;
+  padding: 6px 10px; // tamaño del boton vertical x horizontal
+  font-size: 0.8rem; // tamaño de la fuente
 }
 
+// Tamaño medium
 .medium {
-  padding: 10px 15px;
-  font-size: 1rem;
+  padding: 10px 15px; // tamaño del boton vertical x horizontal
+  font-size: 1rem; // tamaño de la fuente
 }
 
+// Tamaño large
 .large {
-  padding: 14px 20px;
-  font-size: 1.1rem;
+  padding: 14px 20px; // tamaño del boton vertical x horizontal
+  font-size: 1.1rem; // tamaño de la fuente
 }
 
+// Boton de ancho completo
 .full-width {
-  width: 100%;
-  display: block;
+  width: 100%; // ancho completo del contenedor padre
+  display: block; // se muestra como bloque
 }

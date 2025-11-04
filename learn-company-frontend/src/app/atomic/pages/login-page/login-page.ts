@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginForm } from '../../../core/models/login-form.model';
 
 @Component({
   selector: 'app-login-page',
@@ -7,15 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './login-page.scss',
 })
 export class LoginPage {
-  email: string = '';
-  password: string = '';
-
-  onLogin(event: { email: string; password: string }) {
-    this.email = event.email;
-    this.password = event.password;
-
-    console.log('Inicio de sesión:', event);
-    alert(`Login => email: ${event.email}, password: ${event.password}`);
+  onLogin(data: LoginForm) {
+    console.log('Inicio de sesión:', data);
+    alert(`Login => email: ${data.email}, password: ${data.password}`);
   }
 
   onForgotPassword() {

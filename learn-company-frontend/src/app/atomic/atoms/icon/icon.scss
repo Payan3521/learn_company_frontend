@@ -1,4 +1,35 @@
 svg {
+
+  // Permite que el ícono se comporte como texto pero mantenga tamaño propio (no se deforma)
   display: inline-block;
+
+  // Alinea el ícono verticalmente en el medio del texto
   vertical-align: middle;
+
+  // animación suave al cambiar color
+  transition: stroke 0.2s ease-in-out; 
+
+  // el ícono tomará el color del texto automáticamente
+  stroke: currentColor;
+} 
+
+// Hover opcional
+svg:hover {
+  stroke-width: 2.5;
+}
+
+// Tamaños opcionales por clase
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.medium {
+  width: 24px;
+  height: 24px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
 }

@@ -1,53 +1,164 @@
 <div class="test-grid">
-    <app-button 
-        label="Login"
-        variant="primary"
-        size="large"
-        [fullWidth]="true"
-        (onClick)="handleButtonClick('Primary')"
-    ></app-button>
 
-    <app-input
-        id="nameInput"
-        [(value)]="inputValue"
-        placeholder="Escribe algo..."
-  ></app-input>
+  <!-- ----------------------- -->
+  <!-- 1️⃣ BOTONES -->
+  <!-- ----------------------- -->
+  <h2>Botones</h2>
 
-    <app-label
-    label="Nombre"
-    forId="nameInput"
-    [required]="false"
-    size="large"
-  ></app-label>
+  <!-- Variantes -->
+  <h3>Variantes</h3>
+  <app-button label="Primary" variant="primary"></app-button>
+  <app-button label="Secondary" variant="secondary"></app-button>
+  <app-button label="Danger" variant="danger"></app-button>
 
-    <app-form-field
-    label="Correo Electrónico"
-    id="emailInput"
-    [required]="true"
-    [(value)]="email"
-    placeholder="Ingresa tu correo electrónico"
-  ></app-form-field>
+  <!-- Tamaños -->
+  <h3>Tamaños</h3>
+  <app-button label="Small" size="small"></app-button>
+  <app-button label="Medium" size="medium"></app-button>
+  <app-button label="Large" size="large"></app-button>
 
+  <!-- Full Width -->
+  <h3>Ancho completo</h3>
+  <app-button label="Full width" [fullWidth]="true"></app-button>
+
+  <!-- Disabled -->
+  <h3>Deshabilitado</h3>
+  <app-button label="Disabled" [disabled]="true"></app-button>
+
+
+  <!-- ----------------------- -->
+  <!-- 2️⃣ LABELS -->
+  <!-- ----------------------- -->
+  <h2>Labels</h2>
+
+  <app-label label="Label Small" size="small"></app-label>
+  <app-label label="Label Medium" size="medium"></app-label>
+  <app-label label="Label Large" size="large"></app-label>
+  <app-label label="Required Label" [required]="true"></app-label>
+
+
+  <!-- ----------------------- -->
+  <!-- 3️⃣ INPUTS -->
+  <!-- ----------------------- -->
+  <h2>Inputs</h2>
+
+  <app-input placeholder="Texto normal"></app-input>
+  <app-input type="password" placeholder="Contraseña"></app-input>
+  <app-input type="email" placeholder="Correo electrónico"></app-input>
+  <app-input placeholder="Deshabilitado" [disabled]="true"></app-input>
+
+
+  <!-- ----------------------- -->
+  <!-- 4️⃣ ICONOS (COMPLETO) -->
+  <!-- ----------------------- -->
+  <h2>Íconos</h2>
+
+  <!-- 4.1 Heredando color del contenedor (currentColor) -->
+  <h3>Hereda color del contenedor (currentColor)</h3>
+  <p style="color: rgb(0, 207, 255); font-size: 18px;">
+    Usuario (debería verse en cian):
+    <app-icon name="user"></app-icon>
+  </p>
+
+  <!-- 4.2 Color explícito pasado por prop -->
+  <h3>Color explícito</h3>
+  <p>
+    Email (rojo explícito):
+    <app-icon name="email" color="#ff4b4b"></app-icon>
+  </p>
+
+  <!-- 4.3 Tamaños directos con [size] -->
+  <h3>Tamaños</h3>
+  <p>
+    Candado pequeño:
+    <app-icon name="lock" [size]="16"></app-icon>
+  </p>
+  <p>
+    Candado mediano:
+    <app-icon name="lock" [size]="24"></app-icon>
+  </p>
+  <p>
+    Candado grande:
+    <app-icon name="lock" [size]="32"></app-icon>
+  </p>
+
+  <!-- 4.4 Combinación tamaño + color -->
+  <h3>Combinación tamaño + color</h3>
+  <p>
+    <app-icon name="user" [size]="32" color="#00cfff"></app-icon>
+    Perfil
+  </p>
+
+  <!-- 4.5 Ícono dentro de un botón (alineación + herencia) -->
+  <h3>Ícono dentro de botón</h3>
+  <button class="demo-btn">
+    <app-icon name="email" [size]="20"></app-icon>
+    Enviar Email
+  </button>
+
+  <!-- 4.6 Cambio de color por hover en contenedor (muestra herencia) -->
+  <h3>Hover que cambia color del contenedor</h3>
+  <p class="test-hover" style="font-size:18px;">
+    Pasa el cursor sobre este texto (el ícono heredará el color)
+    <app-icon name="user"></app-icon>
+  </p>
+
+  <!-- 4.7 Mostrar todos los íconos uno al lado del otro con labels -->
+  <h3>Lista rápida de íconos</h3>
+  <div class="icon-list">
+    <div class="icon-item">
+      <app-icon name="user" [size]="20"></app-icon>
+      <span>user</span>
+    </div>
+    <div class="icon-item">
+      <app-icon name="lock" [size]="20"></app-icon>
+      <span>lock</span>
+    </div>
+    <div class="icon-item">
+      <app-icon name="email" [size]="20"></app-icon>
+      <span>email</span>
+    </div>
+  </div>
+
+
+  <!-- ----------------------- -->
+  <!-- 5️⃣ FORM-FIELD -->
+  <!-- ----------------------- -->
+  <h2>Form Field</h2>
+
+  <!-- Normal -->
   <app-form-field
-    label="Contraseña"
-    id="passwordInput"
-    [required]="true"
-    [(value)]="password"
-    placeholder="Ingresa tu contraseña"
-    type="password"
+    id="usuario"
+    label="Usuario"
+    placeholder="Tu usuario"
+    [(value)]="inputValue"
   ></app-form-field>
+  <p>Valor: {{ inputValue }}</p>
 
-  <p>Correo ingresado: {{ email }}</p>
-  <p>Contraseña ingresada: {{ password }}</p>
+  <!-- Con error (se mostrará cuando implementes touched/validación) -->
+  <app-form-field
+    id="email"
+    label="Correo"
+    type="email"
+    placeholder="correo@example.com"
+    [(value)]="email"
+    errorMessage="Correo inválido"
+    [required]="true"
+  ></app-form-field>
+  <p>Valor del correo: {{ email }}</p>
 
-    <h2>Login Card Preview</h2>
+
   <app-login-card
-    [email]="email"
-    [password]="password"
     (login)="handleLogin($event)"
+    (forgotPassword)="handleForgotPassword()"
   ></app-login-card>
 
-    <app-login-page-template
-  (login)="handleLogin($event)"
-></app-login-page-template>
+  <p>Email actual: {{ email }}</p>
+  <p>Password actual: {{ password }}</p>
+
+  <app-login-page-template
+    (login)="handleLogin($event)"
+    (forgotPassword)="handleForgotPassword()"
+  ></app-login-page-template>
+
 </div>
