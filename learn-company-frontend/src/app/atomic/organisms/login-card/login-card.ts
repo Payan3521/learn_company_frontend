@@ -9,12 +9,14 @@ import { LoginForm } from '../../../core/models/login-form.model';
 })
 export class LoginCard {
 
+  form: LoginForm = { email: '', password: '' };
+
   @Output() login = new EventEmitter<LoginForm>();
   @Output() forgotPassword = new EventEmitter<void>();
 
   // Se dispara desde (onClick) del botón
-  onLoginClick(data: LoginForm) {
-    this.login.emit(data);
+  onLoginClick() {
+    this.login.emit(this.form);
   }
 
   onForgotPasswordClick() {
